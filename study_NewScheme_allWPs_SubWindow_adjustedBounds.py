@@ -351,7 +351,7 @@ if doTests:
 # ##############################################################################################################################################################################
 
 # create toplevel dir
-toplevelDirName="outputs_sideband_scans_0p5_BoundFor40and50"
+toplevelDirName="outputs_sideband_scans_variableBound_lessLinesV2"
 if not os.path.isdir(toplevelDirName):
     os.mkdir(toplevelDirName)
 
@@ -672,21 +672,21 @@ for mass in masses:
         scanDirection="x"
         scanMin=0.4
 
-        scanMaxList=[ 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, ]
-        otherDirectionCutList=[ 0.6, 0.65, 0.7, 0.75, 0.8, 0.83, 0.85, 0.87, 0.89, 0.91 ]
-        colorList=[  ROOT.kOrange, ROOT.kMagenta+1,  ROOT.kRed, ROOT.kMagenta-5, ROOT.kCyan, ROOT.kOrange-1, ROOT.kGreen, ROOT.kGreen+3, ROOT.kCyan-8, ROOT.kBlue ]
-        modes_list=[ "data", "data", "data", "data", "data","data", "data", "data", "data", "data",]
-        region_list=[ "SR", "SR", "SR", "SR", "SR","SR", "SR", "SR", "SR", "SR", ]
-        windowMaxXList=[ 0.7, 0.7, 0.7, 0.7, 0.7,0.7,0.7, 0.7,0.7,0.7,]
-        windowMinXList=[ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3,0.3, 0.3,   ]
+        scanMaxList=[ 0.69, 0.69, 0.69, 0.69, 0.69]
+        otherDirectionCutList=[ 0.7,  0.83, 0.85, 0.87, 0.89]
+        colorList=[   ROOT.kRed,  ROOT.kMagenta, ROOT.kGreen, ROOT.kGreen+3, ROOT.kCyan,  ]
+        modes_list=["data", "data", "data", "data", "data",]
+        region_list=["SR","SR", "SR", "SR", "SR", ]
+        windowMaxXList=[  0.7,0.7,0.7, 0.7,0.7,]
+        windowMinXList=[   0.3, 0.3, 0.3, 0.3,0.3,  ]
         if mass in ["40","55"]:
-            scanMaxList=scanMaxList[:-1]
-            otherDirectionCutList=otherDirectionCutList[:-1]
-            colorList=colorList[:-1]
-            modes_list=modes_list[:-1]
-            region_list=region_list[:-1]
-            windowMaxXList=windowMaxXList[:-1]
-            windowMinXList=windowMinXList[:-1]
+            # scanMaxList=scanMaxList[:-1]
+            # otherDirectionCutList=otherDirectionCutList[:-1]
+            # colorList=colorList[:-1]
+            # modes_list=modes_list[:-1]
+            # region_list=region_list[:-1]
+            # windowMaxXList=windowMaxXList[:-1]
+            # windowMinXList=windowMinXList[:-1]
             windowMinX=0.5
             windowMinY=0.5
             windowMinXList=[ 0.5 for value in windowMinXList    ]
@@ -755,23 +755,23 @@ for mass in masses:
         scanDirection="x"
         scanMin=0.4
 
-        scanMaxList=[ 0.95, 0.95, 0.95, 0.95, 0.95, 0.95, ]
-        otherDirectionCutList=[ 0.4,  0.5, 0.6, 0.65, 0.67, 0.69, ]
-        colorList=[ ROOT.kCyan, ROOT.kBlue, ROOT.kMagenta+1, ROOT.kMagenta-5, ROOT.kRed, ROOT.kGreen, ]
-        modes_list=[ "data",  "data", "data", "data", "data", "data",  ]
-        region_list=[ "SR",  "SR", "SR", "SR", "SR", "SR",   ]
-        windowMaxXList=[ 1.0, 1.0,1.0,1.0,1.0,1.0,]
-        windowMinXList=[ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3,  ]
+        scanMaxList=[  0.95, 0.95, ]
+        otherDirectionCutList=[  0.65, 0.67,  ]
+        colorList=[ ROOT.kCyan,  ROOT.kRed ]
+        modes_list=[ "data",  "data",  ]
+        region_list=[ "SR",  "SR",   ]
+        windowMaxXList=[ 1.0, 1.0,]
+        windowMinXList=[ 0.3, 0.3,  ]
         if mass in ["40","55"]:
             windowMinX=0.5
             windowMinY=0.5
             windowMinXList=[ 0.5 for value in windowMinXList    ]
             scanMin=0.55
-            scanMaxList=[ 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, ]
+            scanMaxList=[ 0.9 for value in scanMaxList ]
         graphsList=[]
         assert(len(scanMaxList)==len(colorList))
 
-        graphXOffset=0.0005*1
+        graphXOffset=0.0000*1
 
         for i in range(len(scanMaxList)):
             print(i)
@@ -841,21 +841,21 @@ for mass in masses:
         scanDirection="x"
         scanMin=0.4
         
-        scanMaxList=[ 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69, 0.69  ]
-        otherDirectionCutList=[ 0.6, 0.65, 0.7, 0.75, 0.8, 0.83, 0.85, 0.87, 0.89, 0.91  ]
-        colorList=[ ROOT.kOrange, ROOT.kMagenta+1,  ROOT.kRed, ROOT.kMagenta-5, ROOT.kCyan, ROOT.kOrange-1, ROOT.kGreen, ROOT.kGreen+3, ROOT.kCyan-8,  ROOT.kBlue, ]
-        modes_list=[ "data", "data", "data", "data", "data","data", "data", "data", "data", "data"  ]
-        region_list=[ "SR", "SR", "SR", "SR", "SR","SR", "SR", "SR", "SR", "SR"  ]
-        windowMaxXList=[ 0.7, 0.7, 0.7, 0.7, 0.7,0.7,0.7, 0.7,0.7,0.7,]
-        windowMinXList=[ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3,0.3,0.3,    ]
+        scanMaxList=[ 0.69, 0.69, 0.69, 0.69, 0.69 ]
+        otherDirectionCutList=[ 0.7,  0.83, 0.85, 0.87, 0.89]
+        colorList=[   ROOT.kRed,  ROOT.kMagenta, ROOT.kGreen, ROOT.kGreen+3, ROOT.kCyan ]
+        modes_list=["data", "data", "data", "data", "data", ]
+        region_list=["SR","SR", "SR", "SR", "SR", ]
+        windowMaxXList=[  0.7,0.7,0.7, 0.7,0.7, ]
+        windowMinXList=[   0.3, 0.3, 0.3, 0.3,0.3,   ]
         if mass in ["40","55"]:
-            scanMaxList=scanMaxList[:-1]
-            otherDirectionCutList=otherDirectionCutList[:-1]
-            colorList=colorList[:-1]
-            modes_list=modes_list[:-1]
-            region_list=region_list[:-1]
-            windowMaxXList=windowMaxXList[:-1]
-            windowMinXList=windowMinXList[:-1]
+            # scanMaxList=scanMaxList[:-1]
+            # otherDirectionCutList=otherDirectionCutList[:-1]
+            # colorList=colorList[:-1]
+            # modes_list=modes_list[:-1]
+            # region_list=region_list[:-1]
+            # windowMaxXList=windowMaxXList[:-1]
+            # windowMinXList=windowMinXList[:-1]
             windowMinX=0.5
             windowMinY=0.5
             windowMinXList=[ 0.5 for value in windowMinXList    ]
@@ -863,7 +863,7 @@ for mass in masses:
         graphsList=[]
         assert(len(scanMaxList)==len(colorList))
 
-        graphXOffset=0.005*0
+        graphXOffset=0.000*0
 
         for i in range(len(scanMaxList)):
             print(i)
@@ -923,23 +923,23 @@ for mass in masses:
         scanDirection="x"
         scanMin=0.4
 
-        scanMaxList=[ 0.95, 0.95, 0.95, 0.95, 0.95, 0.95, ]
-        otherDirectionCutList=[ 0.4,  0.5, 0.6, 0.65, 0.67, 0.69, ]
-        colorList=[ ROOT.kCyan, ROOT.kBlue, ROOT.kMagenta+1, ROOT.kMagenta-5, ROOT.kRed, ROOT.kGreen, ]
-        modes_list=[ "data",  "data", "data", "data", "data", "data",  ]
-        region_list=[ "SR",  "SR", "SR", "SR", "SR", "SR",   ]
-        windowMaxXList=[ 1.0, 1.0,1.0,1.0,1.0,1.0,]
-        windowMinXList=[ 0.3, 0.3, 0.3, 0.3, 0.3, 0.3,  ]
+        scanMaxList=[  0.95, 0.95, ]
+        otherDirectionCutList=[  0.65, 0.67,  ]
+        colorList=[ ROOT.kCyan,  ROOT.kRed ]
+        modes_list=[ "data",  "data",  ]
+        region_list=[ "SR",  "SR",   ]
+        windowMaxXList=[ 1.0, 1.0,]
+        windowMinXList=[ 0.3, 0.3,  ]
         if mass in ["40","55"]:
             windowMinX=0.5
             windowMinY=0.5
             windowMinXList=[ 0.5 for value in windowMinXList    ]
             scanMin=0.55
-            scanMaxList=[ 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, ]
+            scanMaxList=[ 0.9 for value in scanMaxList ]
         graphsList=[]
         assert(len(scanMaxList)==len(colorList))
 
-        graphXOffset=0.005*0
+        graphXOffset=0.000*0
 
         for i in range(len(scanMaxList)):
             print(i)
